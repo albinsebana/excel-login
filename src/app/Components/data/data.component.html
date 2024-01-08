@@ -1,0 +1,29 @@
+<input type="file" (change)="ReadExecl($event)">
+<form [formGroup]="addForm" class="m-3">
+    <div class="input-group">
+        <input type="number" class="form-control" id="num1" formControlName="num1" aria-describedby="num1" >
+      </div>
+      <div class="input-group">
+        <input type="number" class="form-control" id="num2" formControlName="num2" aria-describedby="num2" >
+      </div>
+
+
+    </form>
+
+    <button (click)="calculateSum()">Calculate Sum</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Sum</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ getSum() }}</td></tr>
+
+          <tr *ngFor="let data of xlData">
+            <td> previous value: {{ data.sum }}</td>
+          </tr>
+      </tbody>
+    </table>
